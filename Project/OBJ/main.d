@@ -1,7 +1,7 @@
 .\obj\main.o: ..\APP\main\main.c
 .\obj\main.o: ..\Bsp\Libraries\SYSTEM\stm32f4xx.h
 .\obj\main.o: ..\Bsp\Libraries\CORE\core_cm4.h
-.\obj\main.o: D:\develop\keil\ARM\ARMCC\Bin\..\include\stdint.h
+.\obj\main.o: D:\keil\ARM\ARMCC\Bin\..\include\stdint.h
 .\obj\main.o: ..\Bsp\Libraries\CORE\core_cmInstr.h
 .\obj\main.o: ..\Bsp\Libraries\CORE\core_cmFunc.h
 .\obj\main.o: ..\Bsp\Libraries\CORE\core_cm4_simd.h
@@ -35,11 +35,11 @@
 .\obj\main.o: ..\Bsp\Libraries\FWLIB\inc\stm32f4xx_dcmi.h
 .\obj\main.o: ..\Bsp\Libraries\FWLIB\inc\stm32f4xx_fsmc.h
 .\obj\main.o: ..\Bsp\System\usart\usart.h
-.\obj\main.o: D:\develop\keil\ARM\ARMCC\Bin\..\include\stdio.h
+.\obj\main.o: D:\keil\ARM\ARMCC\Bin\..\include\stdio.h
 .\obj\main.o: ..\Bsp\System\sys\sys.h
 .\obj\main.o: ..\Bsp\System\delay\delay.h
 .\obj\main.o: ..\Bsp\Peripheral\LCD\lcd.h
-.\obj\main.o: D:\develop\keil\ARM\ARMCC\Bin\..\include\string.h
+.\obj\main.o: D:\keil\ARM\ARMCC\Bin\..\include\string.h
 .\obj\main.o: ..\Bsp\Drivers\adc\bsp_adc.h
 .\obj\main.o: ..\Bsp\Drivers\USBVCP\Driver_USBVCP.h
 .\obj\main.o: ..\Bsp\Libraries\USBLIB\STM32_USB_Device_Library\Class\cdc\usbd_cdc_core.h

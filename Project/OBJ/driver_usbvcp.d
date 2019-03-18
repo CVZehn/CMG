@@ -7,7 +7,7 @@
 .\obj\driver_usbvcp.o: ..\Bsp\Libraries\USBLIB\STM32_USB_APP\USB_Device_Examples\VCP\usb_conf.h
 .\obj\driver_usbvcp.o: ..\Bsp\Libraries\SYSTEM\stm32f4xx.h
 .\obj\driver_usbvcp.o: ..\Bsp\Libraries\CORE\core_cm4.h
-.\obj\driver_usbvcp.o: D:\develop\keil\ARM\ARMCC\Bin\..\include\stdint.h
+.\obj\driver_usbvcp.o: D:\keil\ARM\ARMCC\Bin\..\include\stdint.h
 .\obj\driver_usbvcp.o: ..\Bsp\Libraries\CORE\core_cmInstr.h
 .\obj\driver_usbvcp.o: ..\Bsp\Libraries\CORE\core_cmFunc.h
 .\obj\driver_usbvcp.o: ..\Bsp\Libraries\CORE\core_cm4_simd.h
@@ -55,6 +55,6 @@
 .\obj\driver_usbvcp.o: ..\Bsp\Libraries\USBLIB\STM32_USB_APP\USB_Device_Examples\VCP\usb_bsp.c
 .\obj\driver_usbvcp.o: ..\Bsp\Libraries\USBLIB\STM32_USB_OTG_Driver\usb_bsp.h
 .\obj\driver_usbvcp.o: ..\Bsp\Libraries\USBLIB\STM32_USB_APP\USB_Device_Examples\VCP\usbd_usr.c
-.\obj\driver_usbvcp.o: D:\develop\keil\ARM\ARMCC\Bin\..\include\string.h
-.\obj\driver_usbvcp.o: D:\develop\keil\ARM\ARMCC\Bin\..\include\stdarg.h
-.\obj\driver_usbvcp.o: D:\develop\keil\ARM\ARMCC\Bin\..\include\stdio.h
+.\obj\driver_usbvcp.o: D:\keil\ARM\ARMCC\Bin\..\include\string.h
+.\obj\driver_usbvcp.o: D:\keil\ARM\ARMCC\Bin\..\include\stdarg.h
+.\obj\driver_usbvcp.o: D:\keil\ARM\ARMCC\Bin\..\include\stdio.h

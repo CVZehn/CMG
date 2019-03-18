@@ -2,7 +2,7 @@
 .\obj\stm32f4xx_spi.o: ..\Bsp\Libraries\FWLIB\inc\stm32f4xx_spi.h
 .\obj\stm32f4xx_spi.o: ..\Bsp\Libraries\SYSTEM\stm32f4xx.h
 .\obj\stm32f4xx_spi.o: ..\Bsp\Libraries\CORE\core_cm4.h
-.\obj\stm32f4xx_spi.o: D:\develop\keil\ARM\ARMCC\Bin\..\include\stdint.h
+.\obj\stm32f4xx_spi.o: D:\keil\ARM\ARMCC\Bin\..\include\stdint.h
 .\obj\stm32f4xx_spi.o: ..\Bsp\Libraries\CORE\core_cmInstr.h
 .\obj\stm32f4xx_spi.o: ..\Bsp\Libraries\CORE\core_cmFunc.h
 .\obj\stm32f4xx_spi.o: ..\Bsp\Libraries\CORE\core_cm4_simd.h

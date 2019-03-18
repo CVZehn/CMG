@@ -36,5 +36,5 @@ void usb_func_init()
 }
 void function_config(void)
 {
-	
+	lcd_func_init();
 }

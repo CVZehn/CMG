@@ -1,7 +1,7 @@
 .\obj\lcd.o: ..\Bsp\Peripheral\LCD\lcd.c
 .\obj\lcd.o: ..\Bsp\Libraries\SYSTEM\stm32f4xx.h
 .\obj\lcd.o: ..\Bsp\Libraries\CORE\core_cm4.h
-.\obj\lcd.o: D:\develop\keil\ARM\ARMCC\Bin\..\include\stdint.h
+.\obj\lcd.o: D:\keil\ARM\ARMCC\Bin\..\include\stdint.h
 .\obj\lcd.o: ..\Bsp\Libraries\CORE\core_cmInstr.h
 .\obj\lcd.o: ..\Bsp\Libraries\CORE\core_cmFunc.h
 .\obj\lcd.o: ..\Bsp\Libraries\CORE\core_cm4_simd.h
@@ -35,9 +35,9 @@
 .\obj\lcd.o: ..\Bsp\Libraries\FWLIB\inc\stm32f4xx_dcmi.h
 .\obj\lcd.o: ..\Bsp\Libraries\FWLIB\inc\stm32f4xx_fsmc.h
 .\obj\lcd.o: ..\Bsp\Peripheral\LCD\lcd.h
-.\obj\lcd.o: D:\develop\keil\ARM\ARMCC\Bin\..\include\string.h
+.\obj\lcd.o: D:\keil\ARM\ARMCC\Bin\..\include\string.h
 .\obj\lcd.o: ..\Bsp\Peripheral\LCD\font.h
 .\obj\lcd.o: ..\Bsp\System\delay\delay.h
 .\obj\lcd.o: ..\Bsp\System\sys\sys.h
 .\obj\lcd.o: ..\Bsp\System\usart\usart.h
-.\obj\lcd.o: D:\develop\keil\ARM\ARMCC\Bin\..\include\stdio.h
+.\obj\lcd.o: D:\keil\ARM\ARMCC\Bin\..\include\stdio.h

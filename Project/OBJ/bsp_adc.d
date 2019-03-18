@@ -2,7 +2,7 @@
 .\obj\bsp_adc.o: ..\Bsp\Drivers\adc\bsp_adc.h
 .\obj\bsp_adc.o: ..\Bsp\Libraries\SYSTEM\stm32f4xx.h
 .\obj\bsp_adc.o: ..\Bsp\Libraries\CORE\core_cm4.h
-.\obj\bsp_adc.o: D:\develop\keil\ARM\ARMCC\Bin\..\include\stdint.h
+.\obj\bsp_adc.o: D:\keil\ARM\ARMCC\Bin\..\include\stdint.h
 .\obj\bsp_adc.o: ..\Bsp\Libraries\CORE\core_cmInstr.h
 .\obj\bsp_adc.o: ..\Bsp\Libraries\CORE\core_cmFunc.h
 .\obj\bsp_adc.o: ..\Bsp\Libraries\CORE\core_cm4_simd.h

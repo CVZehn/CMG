@@ -5,11 +5,11 @@
 <h2>Tool Versions:</h2>
 IDE-Version: μVision V5.26.0.0
 Copyright (C) 2018 ARM Ltd and ARM Germany GmbH. All rights reserved.
-License Information: ZEHN Zehn, 1, LIC=UB445-GQTSC-LTP3E-5ZMVZ-QM63D-2Q9K2
+License Information: zehn ZEHN, ZEHN, LIC=KRMLQ-NIDBD-T35MI-TGX8H-18VHT-4EF3K
  
 Tool Versions:
-Toolchain:       MDK-ARM Professional  Version: 5.26.0.0
-Toolchain Path:  D:\develop\keil\ARM\ARMCC\Bin
+Toolchain:       MDK-ARM Plus  Version: 5.26.0.0
+Toolchain Path:  D:\keil\ARM\ARMCC\Bin
 C Compiler:      Armcc.exe V5.06 update 6 (build 750)
 Assembler:       Armasm.exe V5.06 update 6 (build 750)
 Linker/Locator:  ArmLink.exe V5.06 update 6 (build 750)
@@ -21,31 +21,47 @@ Target DLL:      Segger\JL2CM3.dll V2.99.29.0
 Dialog DLL:      TCM.DLL V1.35.3.0
  
 <h2>Project:</h2>
-E:\Desktop\硬件调试\Project\Template.uvprojx
-Project File Date:  03/15/2019
+F:\Desktop\华谊杯\程序\版本\Project\Template.uvprojx
+Project File Date:  03/18/2019
 
 <h2>Output:</h2>
-*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'D:\develop\keil\ARM\ARMCC\Bin'
+*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'D:\keil\ARM\ARMCC\Bin'
 Build target 'Template'
+compiling stm32f4xx_usart.c...
 compiling project_confi.c...
+compiling main.c...
+..\APP\main\main.c(11): warning:  #177-D: variable "t"  was declared but never referenced
+  	u32 t=0;
+..\APP\main\main.c: 1 warning, 0 errors
+compiling stm32f4xx_wwdg.c...
+compiling delay.c...
+compiling stm32f4xx_dma.c...
+compiling sys.c...
+compiling usart.c...
+compiling usbd_core.c...
+compiling usbd_ioreq.c...
+compiling usbd_req.c...
+compiling usb_core.c...
+compiling usb_dcd.c...
+compiling usb_dcd_int.c...
 linking...
-Program Size: Code=23660 RO-data=976 RW-data=424 ZI-data=6408  
+Program Size: Code=28032 RO-data=2544 RW-data=424 ZI-data=6408  
 FromELF: creating hex file...
-".\OBJ\Template.axf" - 0 Error(s), 0 Warning(s).
+".\OBJ\Template.axf" - 0 Error(s), 1 Warning(s).
 
 <h2>Software Packages used:</h2>
 
 Package Vendor: Keil
-                http://www.keil.com/pack/Keil.STM32F4xx_DFP.2.3.0.pack
-                Keil.STM32F4xx_DFP.2.3.0
+                http://www.keil.com/pack/Keil.STM32F4xx_DFP.2.6.0.pack
+                Keil.STM32F4xx_DFP.2.6.0
                 STMicroelectronics STM32F4 Series Device Support, Drivers and Examples
 
 <h2>Collection of Component include folders:</h2>
   .\RTE\_Template
-  D:\develop\keil\ARM\PACK\Keil\STM32F4xx_DFP\2.3.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include
+  D:\keil\ARM\PACK\Keil\STM32F4xx_DFP\2.6.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include
 
 <h2>Collection of Component Files used:</h2>
-Build Time Elapsed:  00:00:02
+Build Time Elapsed:  00:00:14
 </pre>
 </body>
 </html>

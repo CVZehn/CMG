@@ -2,7 +2,7 @@
 .\obj\usart.o: ..\Bsp\System\sys\sys.h
 .\obj\usart.o: ..\Bsp\Libraries\SYSTEM\stm32f4xx.h
 .\obj\usart.o: ..\Bsp\Libraries\CORE\core_cm4.h
-.\obj\usart.o: D:\develop\keil\ARM\ARMCC\Bin\..\include\stdint.h
+.\obj\usart.o: D:\keil\ARM\ARMCC\Bin\..\include\stdint.h
 .\obj\usart.o: ..\Bsp\Libraries\CORE\core_cmInstr.h
 .\obj\usart.o: ..\Bsp\Libraries\CORE\core_cmFunc.h
 .\obj\usart.o: ..\Bsp\Libraries\CORE\core_cm4_simd.h
@@ -36,4 +36,4 @@
 .\obj\usart.o: ..\Bsp\Libraries\FWLIB\inc\stm32f4xx_dcmi.h
 .\obj\usart.o: ..\Bsp\Libraries\FWLIB\inc\stm32f4xx_fsmc.h
 .\obj\usart.o: ..\Bsp\System\usart\usart.h
-.\obj\usart.o: D:\develop\keil\ARM\ARMCC\Bin\..\include\stdio.h
+.\obj\usart.o: D:\keil\ARM\ARMCC\Bin\..\include\stdio.h
