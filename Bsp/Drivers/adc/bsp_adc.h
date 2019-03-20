@@ -3,29 +3,32 @@
 
 #include "stm32f4xx.h"
 
-#define RHEOSTAT_NOFCHANEL      3
+#define RHEOSTAT_NOFCHANEL      4
 
 /*=====================通道1 IO======================*/
-// PB0 通过调帽接电位器
-// ADC IO宏定义
-#define RHEOSTAT_ADC_GPIO_PORT1    GPIOB
-#define RHEOSTAT_ADC_GPIO_PIN1     GPIO_Pin_0
-#define RHEOSTAT_ADC_GPIO_CLK1     RCC_AHB1Periph_GPIOB
-#define RHEOSTAT_ADC_CHANNEL1      ADC_Channel_8
+
+#define RHEOSTAT_ADC_GPIO_PORT1    GPIOA
+#define RHEOSTAT_ADC_GPIO_PIN1     GPIO_Pin_4
+#define RHEOSTAT_ADC_GPIO_CLK1     RCC_AHB1Periph_GPIOA
+#define RHEOSTAT_ADC_CHANNEL1      ADC_Channel_4
 /*=====================通道2 IO ======================*/
-// PB1 通过调帽接光敏电阻
-// ADC IO宏定义
-#define RHEOSTAT_ADC_GPIO_PORT2    GPIOB
-#define RHEOSTAT_ADC_GPIO_PIN2     GPIO_Pin_1
-#define RHEOSTAT_ADC_GPIO_CLK2     RCC_AHB1Periph_GPIOB
-#define RHEOSTAT_ADC_CHANNEL2      ADC_Channel_9
+
+#define RHEOSTAT_ADC_GPIO_PORT2    GPIOA
+#define RHEOSTAT_ADC_GPIO_PIN2     GPIO_Pin_5
+#define RHEOSTAT_ADC_GPIO_CLK2     RCC_AHB1Periph_GPIOA
+#define RHEOSTAT_ADC_CHANNEL2      ADC_Channel_5
 /*=====================通道3 IO ======================*/
-// PA6 悬空，可用杜邦线接3V3或者GND来实验
-// ADC IO宏定义
+
 #define RHEOSTAT_ADC_GPIO_PORT3    GPIOA
 #define RHEOSTAT_ADC_GPIO_PIN3     GPIO_Pin_6
 #define RHEOSTAT_ADC_GPIO_CLK3     RCC_AHB1Periph_GPIOA
-#define RHEOSTAT_ADC_CHANNEL3     ADC_Channel_6
+#define RHEOSTAT_ADC_CHANNEL3      ADC_Channel_6
+/*=====================通道4 IO ======================*/
+
+#define RHEOSTAT_ADC_GPIO_PORT4    GPIOA
+#define RHEOSTAT_ADC_GPIO_PIN4     GPIO_Pin_7
+#define RHEOSTAT_ADC_GPIO_CLK4     RCC_AHB1Periph_GPIOA
+#define RHEOSTAT_ADC_CHANNEL4      ADC_Channel_7
 
 // ADC 序号宏定义
 #define RHEOSTAT_ADC              ADC1
@@ -47,13 +50,6 @@ void Rheostat_Init(void);
 
 //--------------------------------------------------------------------------------
 
-typedef struct
-{
-    u16 value_adc0;
-    u16 value_adc1;
-    u16 value_adc2;
-    u16 value_adc3;
-}adc_value;
 
 typedef struct
 {
@@ -63,8 +59,8 @@ typedef struct
 }adc_func_typedef;
 
 
-extern adc_func_typedef adc;
-extern adc_value simple;
+//extern adc_func_typedef adc;
+//extern adc_value simple;
 void adc_func_init(void);
 
 #endif /* __BSP_ADC_H */

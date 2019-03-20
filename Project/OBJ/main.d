@@ -1,4 +1,5 @@
 .\obj\main.o: ..\APP\main\main.c
+.\obj\main.o: ..\Bsp\System\project_config\project_confi.h
 .\obj\main.o: ..\Bsp\Libraries\SYSTEM\stm32f4xx.h
 .\obj\main.o: ..\Bsp\Libraries\CORE\core_cm4.h
 .\obj\main.o: D:\keil\ARM\ARMCC\Bin\..\include\stdint.h
@@ -38,8 +39,7 @@
 .\obj\main.o: D:\keil\ARM\ARMCC\Bin\..\include\stdio.h
 .\obj\main.o: ..\Bsp\System\sys\sys.h
 .\obj\main.o: ..\Bsp\System\delay\delay.h
-.\obj\main.o: ..\Bsp\Peripheral\LCD\lcd.h
-.\obj\main.o: D:\keil\ARM\ARMCC\Bin\..\include\string.h
+.\obj\main.o: ..\Bsp\Peripheral\LCD\Lcd_Driver.h
 .\obj\main.o: ..\Bsp\Drivers\adc\bsp_adc.h
 .\obj\main.o: ..\Bsp\Drivers\USBVCP\Driver_USBVCP.h
 .\obj\main.o: ..\Bsp\Libraries\USBLIB\STM32_USB_Device_Library\Class\cdc\usbd_cdc_core.h
@@ -55,4 +55,7 @@
 .\obj\main.o: ..\Bsp\Libraries\USBLIB\STM32_USB_Device_Library\Core\usbd_usr.h
 .\obj\main.o: ..\Bsp\Libraries\USBLIB\STM32_USB_APP\USB_Device_Examples\VCP\usbd_desc.h
 .\obj\main.o: ..\Bsp\Libraries\USBLIB\STM32_USB_Device_Library\Core\usbd_req.h
-.\obj\main.o: ..\Bsp\System\project_config\project_confi.h
+.\obj\main.o: ..\Bsp\Peripheral\KEY\bsp_key.h
+.\obj\main.o: ..\Bsp\Peripheral\LED\bsp_led.h
+.\obj\main.o: ..\Bsp\Peripheral\LCD\gui.h
+.\obj\main.o: ..\Bsp\Peripheral\LCD\QDTFT_demo.h

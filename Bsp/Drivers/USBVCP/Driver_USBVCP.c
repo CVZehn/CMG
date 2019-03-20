@@ -18,7 +18,7 @@ __weak void usbVCP_DataRX_Handle(uint8_t* Buf, uint32_t Len);
 /*****************************************************************************/
 
 extern USB_STATUS_e usbStatus;	//	USB×´Ì¬£ºUSB_STATUS_CONFIGURED,	//ÒÑÅäÖÃ×´Ì¬
-usb_func_typedef usb;																				//	USB_STATUS_SUSPENDED,		//ÔÝÍ£¡¢¹ÒÆð×´Ì¬
+//usb_func_typedef usb;																				//	USB_STATUS_SUSPENDED,		//ÔÝÍ£¡¢¹ÒÆð×´Ì¬
 																				//	USB_STATUS_RESUMED,			//»Ö¸´×´Ì¬
 																				//	USB_STATUS_CONNECTED,		//Á¬½Ó×´Ì¬
 																				//	USB_STATUS_DISCONNECTED,//¶Ï¿ªÁ¬½Ó×´Ì¬

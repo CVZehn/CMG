@@ -1,32 +1,37 @@
-#include "stm32f4xx.h"
-#include "usart.h"
-#include "delay.h"
-#include "lcd.h"
-#include "bsp_adc.h"
-#include "Driver_USBVCP.h"
 #include "project_confi.h"
+#include "QDTFT_demo.h"
+
 
 int main(void)
 {
-	u32 t=0;
-	uart_init(115200);
+//	uart_init(115200);
 	delay_init(84);
+    
+    
     function_config();
 //-----------------------------------
-//    adc.init();  
+    
 	bsp.lcd.init();
+//    bsp.usb.usbvcp_init(2,0);
+    bsp.adc.init();
+    bsp.led.init();
+    bsp.key.init();
 //-----------------------------------  
-    usbVCP_Init(2,0);
 //-----------------------------------
-    delay_ms(200);
-    bsp.lcd.dispcolor(white);
-    printf("kk");
-    bsp.lcd.lcd_showxnum(0,10,12345,8,5,blue);
-    bsp.lcd.lcd_showxnum(150,30,12345,8,5,blue);
-    bsp.lcd.lcd_showstring(20,40,"ASasd",8,black);
+    bsp.lcd.clear(WHITE);
+    bsp.gui.drawfont_GBK24(16,2,BLUE,WHITE,"test");
+    bsp.led.led_off(LEDR_GPIO_PORT,LEDR_PIN);
+    bsp.led.led_off(LEDG_GPIO_PORT,LEDG_PIN);
+    bsp.led.led_off(LEDB_GPIO_PORT,LEDB_PIN);
     while(1)
       {
-          usbVCP_SendString("asrtr");
+          if(bsp.key.get_key(KEY1_GPIO_PORT,KEY1_PIN)==0)
+          {
+            bsp.led.led_on(LEDR_GPIO_PORT,LEDR_PIN);
+          }
+          bsp.led.led_on(LEDG_GPIO_PORT,LEDG_PIN);
+          bsp.led.led_on(LEDB_GPIO_PORT,LEDB_PIN);
+          bsp.usb.usbvcp_sendstring("asrtr");
           delay_ms(20);
       }
 }

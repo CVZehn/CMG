@@ -18,7 +18,7 @@
 #include "bsp_adc.h"
 
 
-adc_func_typedef adc;
+//adc_func_typedef adc;
 
 __IO uint16_t ADC_ConvertedValue[RHEOSTAT_NOFCHANEL]={0};
 
@@ -29,30 +29,30 @@ static void Rheostat_ADC_GPIO_Config(void)
 	// 使能 GPIO 时钟
 	RCC_AHB1PeriphClockCmd(RHEOSTAT_ADC_GPIO_CLK1,ENABLE);		
 	// 配置 IO
-  GPIO_InitStructure.GPIO_Pin = RHEOSTAT_ADC_GPIO_PIN1;
+    GPIO_InitStructure.GPIO_Pin = RHEOSTAT_ADC_GPIO_PIN1;
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AIN;
   //不上拉不下拉	
-  GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL ;
+    GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL ;
 	GPIO_Init(RHEOSTAT_ADC_GPIO_PORT1, &GPIO_InitStructure);
 
 	/*=====================通道2======================*/
 	// 使能 GPIO 时钟
 	RCC_AHB1PeriphClockCmd(RHEOSTAT_ADC_GPIO_CLK2,ENABLE);		
 	// 配置 IO
-  GPIO_InitStructure.GPIO_Pin = RHEOSTAT_ADC_GPIO_PIN2;
+    GPIO_InitStructure.GPIO_Pin = RHEOSTAT_ADC_GPIO_PIN2;
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AIN;
   //不上拉不下拉	
-  GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL ;
+    GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL ;
 	GPIO_Init(RHEOSTAT_ADC_GPIO_PORT2, &GPIO_InitStructure);	
 
 	/*=====================通道3=======================*/
 	// 使能 GPIO 时钟
 	RCC_AHB1PeriphClockCmd(RHEOSTAT_ADC_GPIO_CLK3,ENABLE);		
 	// 配置 IO
-  GPIO_InitStructure.GPIO_Pin = RHEOSTAT_ADC_GPIO_PIN3;
+    GPIO_InitStructure.GPIO_Pin = RHEOSTAT_ADC_GPIO_PIN3;
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AIN;
   //不上拉不下拉	
-  GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL ;
+    GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL ;
 	GPIO_Init(RHEOSTAT_ADC_GPIO_PORT3, &GPIO_InitStructure);
 }
 
@@ -137,6 +137,8 @@ static void Rheostat_ADC_Mode_Config(void)
   ADC_RegularChannelConfig(RHEOSTAT_ADC, RHEOSTAT_ADC_CHANNEL2, 2, 
 	                         ADC_SampleTime_3Cycles); 
   ADC_RegularChannelConfig(RHEOSTAT_ADC, RHEOSTAT_ADC_CHANNEL3, 3, 
+	                         ADC_SampleTime_3Cycles); 
+  ADC_RegularChannelConfig(RHEOSTAT_ADC, RHEOSTAT_ADC_CHANNEL4, 4, 
 	                         ADC_SampleTime_3Cycles); 
 
   // 使能DMA请求 after last transfer (Single-ADC mode)

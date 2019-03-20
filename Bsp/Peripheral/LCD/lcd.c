@@ -2,13 +2,14 @@
 #include <lcd.h>
 #include <font.h>
 #include "delay.h"
+
 #include "usart.h"
 
 
-lcd_func_typedef lcd;
+//lcd_func_typedef lcd;
 
 //----------------------------------------------------------------------
-void LCD_GPIO_Init()
+void LCD1_GPIO_Init()
 {
 	GPIO_InitTypeDef GPIO_InitStructure;
 
@@ -78,7 +79,7 @@ void WriteDispData(unsigned char DataH,unsigned char DataL)
 void LCD_Init(void)
 {
 	//CS0=0;
-	LCD_GPIO_Init();
+	LCD1_GPIO_Init();
     
 	LCD_RST_SET;//RST=1;  
 	delay_us(200);
@@ -213,6 +214,27 @@ void LCD_DrawPixel(unsigned int color)
 	SendDataSPI(color>>8); 
 	SendDataSPI(color);
 	LCD_CS_SET;
+}
+
+
+void DispColorBOX(unsigned int Xstart,unsigned int Xend,unsigned int Ystart,unsigned int Yend,unsigned int color)
+{
+	unsigned int i,j;
+	BlockWrite(Xstart,Xend,Ystart,Yend);
+
+	LCD_CS_RESET;//CS0=0; 
+	LCD_A0_SET;//RS=1;
+	//RD0=1;
+
+	for(i=Ystart;i<Yend;i++)
+	{
+	    for(j=Xstart;j<Xend;j++)
+		{    
+			SendDataSPI(color>>8);
+			SendDataSPI(color);
+		}
+	}
+	LCD_CS_SET;//CS0=1; 
 }
 
 void DispColor(unsigned int color)

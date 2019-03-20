@@ -28,5 +28,5 @@ typedef struct
 	u32 (*usbvcp_printf)(const char* format, ...);
 }usb_func_typedef;
 
-extern usb_func_typedef usb;
+//extern usb_func_typedef usb;
 #endif

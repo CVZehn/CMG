@@ -92,6 +92,7 @@ void DispColor(unsigned int color);
 void LCD_DrawPixel(unsigned int color);
 void WriteDispData(unsigned char DataH,unsigned char DataL);
 void BlockWrite(unsigned int Xstart,unsigned int Xend,unsigned int Ystart,unsigned int Yend) ;
+void DispColorBOX(unsigned int Xstart,unsigned int Xend,unsigned int Ystart,unsigned int Yend,unsigned int color);
 void LCD_ShowChar(u16 x,u16 y,u8 num,u8 size,u16 Color);
 void LCD_ShowNum(u16 x,u16 y,u8 num,u8 size,u16 Color);
 void LCD_ShowString(u16 x,u16 y,u8 *p,u8 size,u16 Color);
@@ -110,6 +111,7 @@ typedef struct
     void (*lcd_drawpixel)(unsigned int color);
     void (*writedispdata)(unsigned char DataH,unsigned char DataL);
     void (*blockwrite)(unsigned int Xstart,unsigned int Xend,unsigned int Ystart,unsigned int Yend);
+    void (*lcd_colorbox)(unsigned int Xstart,unsigned int Xend,unsigned int Ystart,unsigned int Yend,unsigned int color);
     void (*lcd_showchar)(u16 x,u16 y,u8 num,u8 size,u16 Color);
     void (*lcd_shownum)(u16 x,u16 y,u8 num,u8 size,u16 Color);
     void (*lcd_showstring)(u16 x,u16 y,u8 *p,u8 size,u16 Color);
@@ -118,7 +120,7 @@ typedef struct
 }lcd_func_typedef;
 
 //---------------------------------------------------------------------
-extern lcd_func_typedef lcd;
+//extern lcd_func_typedef lcd;
 
 void lcd_func_init(void);	
 

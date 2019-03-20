@@ -35,8 +35,11 @@
 .\obj\project_confi.o: ..\Bsp\Libraries\FWLIB\inc\stm32f4xx_dcmi.h
 .\obj\project_confi.o: ..\Bsp\Libraries\FWLIB\inc\stm32f4xx_fsmc.h
 .\obj\project_confi.o: ..\Bsp\System\project_config\project_confi.h
-.\obj\project_confi.o: ..\Bsp\Peripheral\LCD\lcd.h
-.\obj\project_confi.o: D:\keil\ARM\ARMCC\Bin\..\include\string.h
+.\obj\project_confi.o: ..\Bsp\System\usart\usart.h
+.\obj\project_confi.o: D:\keil\ARM\ARMCC\Bin\..\include\stdio.h
+.\obj\project_confi.o: ..\Bsp\System\sys\sys.h
+.\obj\project_confi.o: ..\Bsp\System\delay\delay.h
+.\obj\project_confi.o: ..\Bsp\Peripheral\LCD\Lcd_Driver.h
 .\obj\project_confi.o: ..\Bsp\Drivers\adc\bsp_adc.h
 .\obj\project_confi.o: ..\Bsp\Drivers\USBVCP\Driver_USBVCP.h
 .\obj\project_confi.o: ..\Bsp\Libraries\USBLIB\STM32_USB_Device_Library\Class\cdc\usbd_cdc_core.h
@@ -52,3 +55,6 @@
 .\obj\project_confi.o: ..\Bsp\Libraries\USBLIB\STM32_USB_Device_Library\Core\usbd_usr.h
 .\obj\project_confi.o: ..\Bsp\Libraries\USBLIB\STM32_USB_APP\USB_Device_Examples\VCP\usbd_desc.h
 .\obj\project_confi.o: ..\Bsp\Libraries\USBLIB\STM32_USB_Device_Library\Core\usbd_req.h
+.\obj\project_confi.o: ..\Bsp\Peripheral\KEY\bsp_key.h
+.\obj\project_confi.o: ..\Bsp\Peripheral\LED\bsp_led.h
+.\obj\project_confi.o: ..\Bsp\Peripheral\LCD\gui.h

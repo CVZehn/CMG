@@ -1,31 +1,38 @@
 #include "stm32f4xx.h"
 #include "project_confi.h"
 
+adc_value simple;
 bsp_typedef bsp;
 
 void lcd_func_init(void)
 {
-    bsp.lcd.init = &LCD_Init;
-    bsp.lcd.dispframe = &DispFrame;
-    bsp.lcd.dispband = &DispBand;
-    bsp.lcd.writecomm = &WriteComm;
-    bsp.lcd.writedata = &WriteData;
-    bsp.lcd.dispcolor = &DispColor;
-    bsp.lcd.lcd_drawpixel = &LCD_DrawPixel;
-    bsp.lcd.writedispdata = &WriteDispData;
-    bsp.lcd.blockwrite = &BlockWrite;
-    bsp.lcd.lcd_showchar = &LCD_ShowChar;
-    bsp.lcd.lcd_shownum = &LCD_ShowNum;
-    bsp.lcd.lcd_showstring = &LCD_ShowString;
-    bsp.lcd.lcd_showxnum = &LCD_ShowxNum;
-    bsp.lcd.lcd_showfont = &LCD_ShowFont;
+    bsp.lcd.init = &Lcd_Init;
+    bsp.lcd.clear = &Lcd_Clear;
+    bsp.lcd.setxy = &Lcd_SetXY;
+    bsp.lcd.writedata = &Lcd_WriteData_16Bit;
+    bsp.lcd.drawpixel = &Lcd_DrawPoint;
+    bsp.lcd.blockwrite = &Lcd_SetRegion;
 }
 
+void gui_func_init()
+{
+    bsp.gui.brg2rgb = &LCD_BGR2RGB;
+    bsp.gui.circle = &Gui_Circle;
+    bsp.gui.drawline = &Gui_DrawLine;
+    bsp.gui.box = &Gui_box;
+    bsp.gui.box2 = &Gui_box2;
+    bsp.gui.displaybuttondown = &DisplayButtonDown;
+    bsp.gui.displaybuttonup = &DisplayButtonUp;
+    bsp.gui.drawfont_GBK16 = &Gui_DrawFont_GBK16;
+    bsp.gui.drawfont_GBK24 = &Gui_DrawFont_GBK24;
+    bsp.gui.drawfont_num32 = &Gui_DrawFont_Num32;
+}
 void adc_func_init()
 {
     bsp.adc.init=&Rheostat_Init;
 	bsp.adc.adc_softwarestartconv=&ADC_SoftwareStartConv;
 }
+
 void usb_func_init()
 {
 	bsp.usb.usbvcp_init = &usbVCP_Init;
@@ -34,7 +41,26 @@ void usb_func_init()
 	bsp.usb.usbvcp_sendstring = &usbVCP_SendString;
 	bsp.usb.usbvcp_printf = &usbVCP_Printf;
 }
+
+void key_func_init()
+{
+    bsp.key.init = &Key_GPIO_Config;
+    bsp.key.get_key = &Key_Scan;
+}
+
+void led_func_init()
+{
+    bsp.led.init = &LED_GPIO_Config;
+    bsp.led.led_on  = &GPIO_ResetBits;
+    bsp.led.led_off = &GPIO_SetBits;
+}
+
 void function_config(void)
 {
 	lcd_func_init();
+    usb_func_init();
+    adc_func_init();
+    led_func_init();
+    key_func_init();
+    gui_func_init();
 }
