@@ -5,6 +5,7 @@
 int main(void)
 {
 //	uart_init(115200);
+    
 	delay_init(84);
     
     
@@ -12,27 +13,39 @@ int main(void)
 //-----------------------------------
     
 	bsp.lcd.init();
-//    bsp.usb.usbvcp_init(2,0);
     bsp.adc.init();
     bsp.led.init();
     bsp.key.init();
+    bsp.usb.usbvcp_init(2,0);
 //-----------------------------------  
 //-----------------------------------
-    bsp.lcd.clear(WHITE);
-    bsp.gui.drawfont_GBK24(16,2,BLUE,WHITE,"test");
     bsp.led.led_off(LEDR_GPIO_PORT,LEDR_PIN);
     bsp.led.led_off(LEDG_GPIO_PORT,LEDG_PIN);
     bsp.led.led_off(LEDB_GPIO_PORT,LEDB_PIN);
+//-----------------------------------  
+//    demo_create();
+    
+    main_task();
+//-----------------------------------
     while(1)
       {
-          if(bsp.key.get_key(KEY1_GPIO_PORT,KEY1_PIN)==0)
+          key_value();
+          if(key_vlaues.key1==0)
           {
-            bsp.led.led_on(LEDR_GPIO_PORT,LEDR_PIN);
+              display_break();
           }
-          bsp.led.led_on(LEDG_GPIO_PORT,LEDG_PIN);
-          bsp.led.led_on(LEDB_GPIO_PORT,LEDB_PIN);
-          bsp.usb.usbvcp_sendstring("asrtr");
-          delay_ms(20);
+          else if(key_vlaues.key1==1)
+          {
+            display_connect();
+          }
+        bsp.usb.usbvcp_printf("1:%d\r\n",key_vlaues.key1);
+//          bsp.usb.usbvcp_printf("2:%d\r\n",*simple.value_adc1);
+//          bsp.usb.usbvcp_printf("3:%d\r\n",*simple.value_adc2);
+//          bsp.usb.usbvcp_printf("4:%d\r\n",*simple.value_adc3);
+        lv_tick_inc(1);		
+		lv_task_handler();
+        datatransfer();
+//          delay_ms(300);
       }
 }
 

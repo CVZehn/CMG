@@ -10,6 +10,11 @@
 #include "bsp_key.h" 
 #include "bsp_led.h"   
 #include "gui.h"   
+#include "lvgl.h"
+#include "demo.h"  
+#include "tft.h"
+#include "pageui.h"
+#include "datahandle.h"
 
 typedef struct
 {
@@ -25,10 +30,10 @@ typedef struct
 
 typedef struct
 {
-    u16 value_adc0;
-    u16 value_adc1;
-    u16 value_adc2;
-    u16 value_adc3;
+    u16 *value_adc0;
+    u16 *value_adc1;
+    u16 *value_adc2;
+    u16 *value_adc3;
 }adc_value;
 
 

@@ -1,6 +1,8 @@
 --cpu=Cortex-M4.fp
 ".\obj\main.o"
 ".\obj\project_confi.o"
+".\obj\pageui.o"
+".\obj\datahandle.o"
 ".\obj\driver_usbvcp.o"
 ".\obj\bsp_adc.o"
 ".\obj\bsp_key.o"

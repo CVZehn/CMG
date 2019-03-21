@@ -338,7 +338,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F40_41xxx,USE_STDPERIPH_DRIVER,LV_CONF_INCLUDE_SIMPLE</Define>
               <Undefine></Undefine>
-              <IncludePath>..\Bsp\Libraries\FWLIB\inc;..\Bsp\Libraries\CORE;..\Bsp\Libraries\SYSTEM;..\Bsp\System\delay;..\Bsp\System\sys;..\Bsp\System\usart;..\Bsp\Libraries\SYSTEM;..\Bsp\Drivers\LCD;..\Bsp\Drivers\USBVCP;..\Bsp\Libraries\USBLIB\STM32_USB_Device_Library\Class\cdc;..\Bsp\Libraries\USBLIB\STM32_USB_Device_Library\Core;..\Bsp\Libraries\USBLIB\STM32_USB_APP\USB_Device_Examples\VCP;..\Bsp\Libraries\USBLIB\STM32_USB_OTG_Driver;..\Bsp\Peripheral\LCD;..\Bsp\Drivers\adc;..\Project;..\Bsp\System\project_config;..\Bsp\Peripheral\KEY;..\Bsp\Peripheral\LED;..\lvgl\demo;..\lvgl\docs;..\lvgl\lv_core;..\lvgl\lv_draw;..\lvgl\lv_fonts;..\lvgl\lv_hal;..\lvgl\lv_misc;..\lvgl\lv_my_hal;..\lvgl\lv_objx;..\lvgl\lv_porting;..\lvgl\lv_themes;..\lvgl\lvgl;..\lvgl</IncludePath>
+              <IncludePath>..\Bsp\Libraries\FWLIB\inc;..\Bsp\Libraries\CORE;..\Bsp\Libraries\SYSTEM;..\Bsp\System\delay;..\Bsp\System\sys;..\Bsp\System\usart;..\Bsp\Libraries\SYSTEM;..\Bsp\Drivers\LCD;..\Bsp\Drivers\USBVCP;..\Bsp\Libraries\USBLIB\STM32_USB_Device_Library\Class\cdc;..\Bsp\Libraries\USBLIB\STM32_USB_Device_Library\Core;..\Bsp\Libraries\USBLIB\STM32_USB_APP\USB_Device_Examples\VCP;..\Bsp\Libraries\USBLIB\STM32_USB_OTG_Driver;..\Bsp\Peripheral\LCD;..\Bsp\Drivers\adc;..\Project;..\Bsp\System\project_config;..\Bsp\Peripheral\KEY;..\Bsp\Peripheral\LED;..\lvgl\demo;..\lvgl\docs;..\lvgl\lv_core;..\lvgl\lv_draw;..\lvgl\lv_fonts;..\lvgl\lv_hal;..\lvgl\lv_misc;..\lvgl\lv_my_hal;..\lvgl\lv_objx;..\lvgl\lv_porting;..\lvgl\lv_themes;..\lvgl\lvgl;..\lvgl;..\APP\pageui;..\APP\datahandle</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -391,6 +391,16 @@
               <FileName>project_confi.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Bsp\System\project_config\project_confi.c</FilePath>
+            </File>
+            <File>
+              <FileName>pageui.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\APP\pageui\pageui.c</FilePath>
+            </File>
+            <File>
+              <FileName>datahandle.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\APP\datahandle\datahandle.c</FilePath>
             </File>
           </Files>
         </Group>

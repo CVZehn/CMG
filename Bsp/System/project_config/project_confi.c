@@ -12,6 +12,7 @@ void lcd_func_init(void)
     bsp.lcd.writedata = &Lcd_WriteData_16Bit;
     bsp.lcd.drawpixel = &Lcd_DrawPoint;
     bsp.lcd.blockwrite = &Lcd_SetRegion;
+    bsp.lcd.colorblock = &Lcd_Colorblock;
 }
 
 void gui_func_init()
@@ -31,6 +32,10 @@ void adc_func_init()
 {
     bsp.adc.init=&Rheostat_Init;
 	bsp.adc.adc_softwarestartconv=&ADC_SoftwareStartConv;
+    simple.value_adc0 = &ADC_ConvertedValue[0];
+    simple.value_adc1 = &ADC_ConvertedValue[1];
+    simple.value_adc2 = &ADC_ConvertedValue[2];
+    simple.value_adc3 = &ADC_ConvertedValue[3];
 }
 
 void usb_func_init()
@@ -63,4 +68,6 @@ void function_config(void)
     led_func_init();
     key_func_init();
     gui_func_init();
+	lv_init();
+	tft_init();
 }

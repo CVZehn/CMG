@@ -20,7 +20,7 @@
 
 //adc_func_typedef adc;
 
-__IO uint16_t ADC_ConvertedValue[RHEOSTAT_NOFCHANEL]={0};
+u16 ADC_ConvertedValue[RHEOSTAT_NOFCHANEL]={0};
 
 static void Rheostat_ADC_GPIO_Config(void)
 {
@@ -54,6 +54,16 @@ static void Rheostat_ADC_GPIO_Config(void)
   //不上拉不下拉	
     GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL ;
 	GPIO_Init(RHEOSTAT_ADC_GPIO_PORT3, &GPIO_InitStructure);
+    
+	/*=====================通道4=======================*/
+	// 使能 GPIO 时钟
+	RCC_AHB1PeriphClockCmd(RHEOSTAT_ADC_GPIO_CLK4,ENABLE);		
+	// 配置 IO
+    GPIO_InitStructure.GPIO_Pin = RHEOSTAT_ADC_GPIO_PIN4;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AIN;
+  //不上拉不下拉	
+    GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL ;
+	GPIO_Init(RHEOSTAT_ADC_GPIO_PORT4, &GPIO_InitStructure);
 }
 
 static void Rheostat_ADC_Mode_Config(void)

@@ -63,6 +63,8 @@ typedef struct
 //extern adc_value simple;
 void adc_func_init(void);
 
+extern u16 ADC_ConvertedValue[RHEOSTAT_NOFCHANEL];
+
 #endif /* __BSP_ADC_H */
 
 
