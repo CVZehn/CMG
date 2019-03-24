@@ -1,6 +1,7 @@
 #include "stm32f4xx.h"
 #include "project_confi.h"
-
+ 
+arm_cfft_radix4_instance_f32 scfft;
 adc_value simple;
 bsp_typedef bsp;
 
@@ -62,6 +63,7 @@ void led_func_init()
 
 void function_config(void)
 {
+    
 	lcd_func_init();
     usb_func_init();
     adc_func_init();
@@ -70,4 +72,8 @@ void function_config(void)
     gui_func_init();
 	lv_init();
 	tft_init();
+  
+    #ifdef USE_FFT  
+        arm_cfft_radix4_init_f32(&scfft,128,0,1);
+    #endif
 }

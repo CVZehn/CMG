@@ -67,4 +67,5 @@ void touchpad_init(void)
 static bool touchpad_read(lv_indev_data_t *data)
 {
 
+
 }

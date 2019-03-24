@@ -198,4 +198,8 @@
 .\obj\main.o: ..\APP\pageui\pageui.h
 .\obj\main.o: ..\APP\datahandle\datahandle.h
 .\obj\main.o: ..\Bsp\System\project_config\project_confi.h
+.\obj\main.o: D:\keil\ARM\ARMCC\Bin\..\include\math.h
+.\obj\main.o: ..\Bsp\DSP_LIB\Include\arm_math.h
+.\obj\main.o: ..\Bsp\DSP_LIB\Include\core_cm4.h
+.\obj\main.o: ..\Bsp\Drivers\TIMER\timer.h
 .\obj\main.o: ..\Bsp\Peripheral\LCD\QDTFT_demo.h

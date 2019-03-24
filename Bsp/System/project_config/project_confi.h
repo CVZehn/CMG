@@ -15,6 +15,12 @@
 #include "tft.h"
 #include "pageui.h"
 #include "datahandle.h"
+#include "math.h" 
+#include "arm_math.h"  
+#include "timer.h"
+
+
+//#define  USE_FFT
 
 typedef struct
 {
@@ -40,7 +46,10 @@ typedef struct
 
 void function_config(void);
 
+extern  arm_cfft_radix4_instance_f32 scfft;
 extern adc_value simple;
 extern bsp_typedef bsp;
+
+
 #endif
 

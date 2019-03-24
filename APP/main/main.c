@@ -6,10 +6,12 @@ int main(void)
 {
 //	uart_init(115200);
     
+	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);//设置系统中断优先级分组2
 	delay_init(84);
-    
+     
     
     function_config();
+ 	TIM3_Int_Init(100-1,420-1);	//定时器时钟84M，分频系数8400，所以84M/8400=10Khz的计数频率，计数5000次为500ms 
 //-----------------------------------
     
 	bsp.lcd.init();
@@ -19,9 +21,8 @@ int main(void)
     bsp.usb.usbvcp_init(2,0);
 //-----------------------------------  
 //-----------------------------------
-    bsp.led.led_off(LEDR_GPIO_PORT,LEDR_PIN);
+    bsp.led.led_off(LEDR_GPIO_PORT,LEDG_PIN);
     bsp.led.led_off(LEDG_GPIO_PORT,LEDG_PIN);
-    bsp.led.led_off(LEDB_GPIO_PORT,LEDB_PIN);
 //-----------------------------------  
 //    demo_create();
     
@@ -29,23 +30,15 @@ int main(void)
 //-----------------------------------
     while(1)
       {
+          
           key_value();
-          if(key_vlaues.key1==0)
-          {
-              display_break();
-          }
-          else if(key_vlaues.key1==1)
-          {
-            display_connect();
-          }
-        bsp.usb.usbvcp_printf("1:%d\r\n",key_vlaues.key1);
-//          bsp.usb.usbvcp_printf("2:%d\r\n",*simple.value_adc1);
-//          bsp.usb.usbvcp_printf("3:%d\r\n",*simple.value_adc2);
-//          bsp.usb.usbvcp_printf("4:%d\r\n",*simple.value_adc3);
+          
+    #ifdef USE_FFT
+         FFT();
+    #endif
         lv_tick_inc(1);		
 		lv_task_handler();
         datatransfer();
-//          delay_ms(300);
       }
 }
 

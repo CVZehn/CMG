@@ -198,3 +198,7 @@
 .\obj\project_confi.o: ..\APP\pageui\pageui.h
 .\obj\project_confi.o: ..\APP\datahandle\datahandle.h
 .\obj\project_confi.o: ..\Bsp\System\project_config\project_confi.h
+.\obj\project_confi.o: D:\keil\ARM\ARMCC\Bin\..\include\math.h
+.\obj\project_confi.o: ..\Bsp\DSP_LIB\Include\arm_math.h
+.\obj\project_confi.o: ..\Bsp\DSP_LIB\Include\core_cm4.h
+.\obj\project_confi.o: ..\Bsp\Drivers\TIMER\timer.h

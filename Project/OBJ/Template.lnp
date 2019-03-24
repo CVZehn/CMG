@@ -10,6 +10,7 @@
 ".\obj\gui.o"
 ".\obj\lcd_driver.o"
 ".\obj\qdtft_demo.o"
+".\obj\timer.o"
 ".\obj\startup_stm32f40_41xxx.o"
 ".\obj\stm32f4xx_it.o"
 ".\obj\system_stm32f4xx.o"
@@ -136,6 +137,7 @@
 ".\obj\lv_theme_zen.o"
 ".\obj\tft.o"
 ".\obj\touchpad.o"
+"..\Bsp\DSP_LIB\arm_cortexM4lf_math.lib"
 --library_type=microlib --strict --scatter ".\OBJ\Template.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
