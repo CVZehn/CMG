@@ -33,6 +33,7 @@ void adc_func_init()
 {
     bsp.adc.init=&Rheostat_Init;
 	bsp.adc.adc_softwarestartconv=&ADC_SoftwareStartConv;
+    bsp.adc.get_adc = &Get_Adc;
     simple.value_adc0 = &ADC_ConvertedValue[0];
     simple.value_adc1 = &ADC_ConvertedValue[1];
     simple.value_adc2 = &ADC_ConvertedValue[2];
@@ -52,6 +53,10 @@ void key_func_init()
 {
     bsp.key.init = &Key_GPIO_Config;
     bsp.key.get_key = &Key_Scan;
+    key_vlaues.key1 = 2;
+    key_vlaues.key2 = 2;
+    key_vlaues.key3 = 2;
+    key_vlaues.key4 = 2;
 }
 
 void led_func_init()
@@ -60,7 +65,15 @@ void led_func_init()
     bsp.led.led_on  = &GPIO_ResetBits;
     bsp.led.led_off = &GPIO_SetBits;
 }
-
+void nrf_func_init()
+{
+    bsp.nrf.init = &init_nrf24l01_io;
+    bsp.nrf.rx_mode = &NRF_RX_Mode;
+    bsp.nrf.tx_mode = &ifnnrf_tx_mode;
+    bsp.nrf.tx_data = &NRF_tx_Dat;
+    bsp.nrf.rx_data = &NRF_Rx_Dat;
+    bsp.nrf.check = &NRF_Check;
+}
 void function_config(void)
 {
     
@@ -69,6 +82,7 @@ void function_config(void)
     adc_func_init();
     led_func_init();
     key_func_init();
+    nrf_func_init();
     gui_func_init();
 	lv_init();
 	tft_init();

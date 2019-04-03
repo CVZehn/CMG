@@ -202,4 +202,5 @@
 .\obj\main.o: ..\Bsp\DSP_LIB\Include\arm_math.h
 .\obj\main.o: ..\Bsp\DSP_LIB\Include\core_cm4.h
 .\obj\main.o: ..\Bsp\Drivers\TIMER\timer.h
+.\obj\main.o: ..\Bsp\Drivers\24l01\NRF24L01.h
 .\obj\main.o: ..\Bsp\Peripheral\LCD\QDTFT_demo.h

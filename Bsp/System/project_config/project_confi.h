@@ -17,7 +17,8 @@
 #include "datahandle.h"
 #include "math.h" 
 #include "arm_math.h"  
-#include "timer.h"
+#include "timer.h"  
+#include "NRF24L01.h"
 
 
 //#define  USE_FFT
@@ -30,6 +31,7 @@ typedef struct
     key_func_typedef key;
     led_func_typedef led;
     gui_func_typedef gui;
+    nrf_func_typedef nrf;
 	
 }bsp_typedef;
 

@@ -45,6 +45,7 @@
 
 
 void Rheostat_Init(void);
+u16 Get_Adc(u8 ch);   
 
 
 
@@ -55,6 +56,7 @@ typedef struct
 {
     void (*init)(void);
 	void (*adc_softwarestartconv)(ADC_TypeDef* ADCx);
+    u16 (*get_adc)(u8 ch);
 	
 }adc_func_typedef;
 

@@ -202,3 +202,4 @@
 .\obj\project_confi.o: ..\Bsp\DSP_LIB\Include\arm_math.h
 .\obj\project_confi.o: ..\Bsp\DSP_LIB\Include\core_cm4.h
 .\obj\project_confi.o: ..\Bsp\Drivers\TIMER\timer.h
+.\obj\project_confi.o: ..\Bsp\Drivers\24l01\NRF24L01.h

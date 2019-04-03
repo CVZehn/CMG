@@ -71,7 +71,6 @@ static void Rheostat_ADC_Mode_Config(void)
 	DMA_InitTypeDef DMA_InitStructure;
 	ADC_InitTypeDef ADC_InitStructure;
   ADC_CommonInitTypeDef ADC_CommonInitStructure;
-	
   // ------------------DMA Init 结构体参数 初始化--------------------------
   // ADC1使用DMA2，数据流0，通道0，这个是手册固定死的
   // 开启DMA时钟
@@ -108,14 +107,13 @@ static void Rheostat_ADC_Mode_Config(void)
 	DMA_Init(RHEOSTAT_ADC_DMA_STREAM, &DMA_InitStructure);
 	// 使能DMA流
   DMA_Cmd(RHEOSTAT_ADC_DMA_STREAM, ENABLE);
-	
 	// 开启ADC时钟
 	RCC_APB2PeriphClockCmd(RHEOSTAT_ADC_CLK , ENABLE);
   // -------------------ADC Common 结构体 参数 初始化------------------------
 	// 独立ADC模式
   ADC_CommonInitStructure.ADC_Mode = ADC_Mode_Independent;
   // 时钟为fpclk x分频	
-  ADC_CommonInitStructure.ADC_Prescaler = ADC_Prescaler_Div4;
+  ADC_CommonInitStructure.ADC_Prescaler = ADC_Prescaler_Div8;
   // 禁止DMA直接访问模式	
   ADC_CommonInitStructure.ADC_DMAAccessMode = ADC_DMAAccessMode_Disabled;
   // 采样时间间隔	
@@ -143,13 +141,13 @@ static void Rheostat_ADC_Mode_Config(void)
 	
   // 配置 ADC 通道转换顺序和采样时间周期
   ADC_RegularChannelConfig(RHEOSTAT_ADC, RHEOSTAT_ADC_CHANNEL1, 1, 
-	                         ADC_SampleTime_3Cycles);
+	                         ADC_SampleTime_480Cycles);
   ADC_RegularChannelConfig(RHEOSTAT_ADC, RHEOSTAT_ADC_CHANNEL2, 2, 
-	                         ADC_SampleTime_3Cycles); 
+	                         ADC_SampleTime_480Cycles); 
   ADC_RegularChannelConfig(RHEOSTAT_ADC, RHEOSTAT_ADC_CHANNEL3, 3, 
-	                         ADC_SampleTime_3Cycles); 
+	                         ADC_SampleTime_480Cycles); 
   ADC_RegularChannelConfig(RHEOSTAT_ADC, RHEOSTAT_ADC_CHANNEL4, 4, 
-	                         ADC_SampleTime_3Cycles); 
+	                         ADC_SampleTime_480Cycles); 
 
   // 使能DMA请求 after last transfer (Single-ADC mode)
   ADC_DMARequestAfterLastTransferCmd(RHEOSTAT_ADC, ENABLE);
@@ -161,12 +159,58 @@ static void Rheostat_ADC_Mode_Config(void)
   //开始adc转换，软件触发
   ADC_SoftwareStartConv(RHEOSTAT_ADC);
 }
+  
+void  Adc_Init(void)
+{    
+	ADC_CommonInitTypeDef ADC_CommonInitStructure;
+	ADC_InitTypeDef       ADC_InitStructure;
+	
+  RCC_APB2PeriphClockCmd(RCC_APB2Periph_ADC1, ENABLE); //使能ADC1时钟
 
+ 
+	RCC_APB2PeriphResetCmd(RCC_APB2Periph_ADC1,ENABLE);	  //ADC1复位
+	RCC_APB2PeriphResetCmd(RCC_APB2Periph_ADC1,DISABLE);	//复位结束	 
+ 
+	
+  ADC_CommonInitStructure.ADC_Mode = ADC_Mode_Independent;//独立模式
+  ADC_CommonInitStructure.ADC_TwoSamplingDelay = ADC_TwoSamplingDelay_5Cycles;//两个采样阶段之间的延迟5个时钟
+  ADC_CommonInitStructure.ADC_DMAAccessMode = ADC_DMAAccessMode_Disabled; //DMA失能
+  ADC_CommonInitStructure.ADC_Prescaler = ADC_Prescaler_Div4;//预分频4分频。ADCCLK=PCLK2/4=84/4=21Mhz,ADC时钟最好不要超过36Mhz 
+  ADC_CommonInit(&ADC_CommonInitStructure);//初始化
+	
+  ADC_InitStructure.ADC_Resolution = ADC_Resolution_12b;//12位模式
+  ADC_InitStructure.ADC_ScanConvMode = DISABLE;//非扫描模式	
+  ADC_InitStructure.ADC_ContinuousConvMode = DISABLE;//关闭连续转换
+  ADC_InitStructure.ADC_ExternalTrigConvEdge = ADC_ExternalTrigConvEdge_None;//禁止触发检测，使用软件触发
+  ADC_InitStructure.ADC_DataAlign = ADC_DataAlign_Right;//右对齐	
+  ADC_InitStructure.ADC_NbrOfConversion = 1;//1个转换在规则序列中 也就是只转换规则序列1 
+  ADC_Init(ADC1, &ADC_InitStructure);//ADC初始化
+	
+ 
+	ADC_Cmd(ADC1, ENABLE);//开启AD转换器	
 
+}				  
+
+//获得ADC值
+//ch: @ref ADC_channels 
+//通道值 0~16取值范围为：ADC_Channel_0~ADC_Channel_16
+//返回值:转换结果
+u16 Get_Adc(u8 ch)   
+{
+	  	//设置指定ADC的规则组通道，一个序列，采样时间
+	ADC_RegularChannelConfig(ADC1, ch, 1, ADC_SampleTime_480Cycles );	//ADC1,ADC通道,480个周期,提高采样时间可以提高精确度			    
+  
+	ADC_SoftwareStartConv(ADC1);		//使能指定的ADC1的软件转换启动功能	
+	 
+	while(!ADC_GetFlagStatus(ADC1, ADC_FLAG_EOC ));//等待转换结束
+
+	return ADC_GetConversionValue(ADC1);	//返回最近一次ADC1规则组的转换结果
+}
 
 void Rheostat_Init(void)
 {
 	Rheostat_ADC_GPIO_Config();
+//    Adc_Init();
 	Rheostat_ADC_Mode_Config();
 }
 

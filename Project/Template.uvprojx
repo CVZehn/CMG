@@ -338,7 +338,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F40_41xxx,USE_STDPERIPH_DRIVER,LV_CONF_INCLUDE_SIMPLE,ARM_MATH_CM4,__CC_ARM,ARM_MATH_MATRIX_CHECK,ARM_MATH_ROUNDING</Define>
               <Undefine></Undefine>
-              <IncludePath>..\Bsp\Libraries\FWLIB\inc;..\Bsp\Libraries\CORE;..\Bsp\Libraries\SYSTEM;..\Bsp\System\delay;..\Bsp\System\sys;..\Bsp\System\usart;..\Bsp\Libraries\SYSTEM;..\Bsp\Drivers\LCD;..\Bsp\Drivers\USBVCP;..\Bsp\Libraries\USBLIB\STM32_USB_Device_Library\Class\cdc;..\Bsp\Libraries\USBLIB\STM32_USB_Device_Library\Core;..\Bsp\Libraries\USBLIB\STM32_USB_APP\USB_Device_Examples\VCP;..\Bsp\Libraries\USBLIB\STM32_USB_OTG_Driver;..\Bsp\Peripheral\LCD;..\Bsp\Drivers\adc;..\Project;..\Bsp\System\project_config;..\Bsp\Peripheral\KEY;..\Bsp\Peripheral\LED;..\lvgl\demo;..\lvgl\docs;..\lvgl\lv_core;..\lvgl\lv_draw;..\lvgl\lv_fonts;..\lvgl\lv_hal;..\lvgl\lv_misc;..\lvgl\lv_my_hal;..\lvgl\lv_objx;..\lvgl\lv_porting;..\lvgl\lv_themes;..\lvgl\lvgl;..\lvgl;..\APP\pageui;..\APP\datahandle;..\Bsp\DSP_LIB\Include;..\Bsp\DSP_LIB;..\Bsp\Drivers\TIMER</IncludePath>
+              <IncludePath>..\Bsp\Libraries\FWLIB\inc;..\Bsp\Libraries\CORE;..\Bsp\Libraries\SYSTEM;..\Bsp\System\delay;..\Bsp\System\sys;..\Bsp\System\usart;..\Bsp\Libraries\SYSTEM;..\Bsp\Drivers\LCD;..\Bsp\Drivers\USBVCP;..\Bsp\Libraries\USBLIB\STM32_USB_Device_Library\Class\cdc;..\Bsp\Libraries\USBLIB\STM32_USB_Device_Library\Core;..\Bsp\Libraries\USBLIB\STM32_USB_APP\USB_Device_Examples\VCP;..\Bsp\Libraries\USBLIB\STM32_USB_OTG_Driver;..\Bsp\Peripheral\LCD;..\Bsp\Drivers\adc;..\Project;..\Bsp\System\project_config;..\Bsp\Peripheral\KEY;..\Bsp\Peripheral\LED;..\lvgl\demo;..\lvgl\docs;..\lvgl\lv_core;..\lvgl\lv_draw;..\lvgl\lv_fonts;..\lvgl\lv_hal;..\lvgl\lv_misc;..\lvgl\lv_my_hal;..\lvgl\lv_objx;..\lvgl\lv_porting;..\lvgl\lv_themes;..\lvgl\lvgl;..\lvgl;..\APP\pageui;..\APP\datahandle;..\Bsp\DSP_LIB\Include;..\Bsp\DSP_LIB;..\Bsp\Drivers\TIMER;..\Bsp\Drivers\DMA;..\Bsp\Drivers\24l01</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -446,6 +446,11 @@
               <FileName>timer.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Bsp\Drivers\TIMER\timer.c</FilePath>
+            </File>
+            <File>
+              <FileName>NRF24L01.C</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Bsp\Drivers\24l01\NRF24L01.C</FilePath>
             </File>
           </Files>
         </Group>
